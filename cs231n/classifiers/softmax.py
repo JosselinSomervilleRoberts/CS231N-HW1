@@ -34,27 +34,7 @@ def softmax_loss_naive(W, X, y, reg):
     #############################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    for i in range(X.shape[0]):
-        scores = X[i] @ W
-        scores = np.exp(scores)
-        scores_sum = np.sum(scores)
-        scores = scores / scores_sum
-
-        # Compute the loss
-        loss += -np.log(scores[y[i]])
-
-        # Compute the gradient
-        for j in range(W.shape[1]):
-            dW[:, j] += X[i] * scores[j]
-        dW[:, y[i]] -= X[i]
-
-    # Average the loss and gradient
-    loss /= X.shape[0]
-    dW /= X.shape[0]
-
-    # Add regularization
-    loss += reg * np.sum(W * W)
-    dW += reg * 2 * W
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
@@ -79,26 +59,7 @@ def softmax_loss_vectorized(W, X, y, reg):
     #############################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    scores = X @ W
-    scores = np.exp(scores)
-    scores_sum = np.sum(scores, axis = 1)
-    scores = scores / scores_sum[:, np.newaxis]
-
-    # Compute the loss without a loop
-    correct_class_scores = scores[np.arange(scores.shape[0]), y]
-    loss = np.sum(-np.log(correct_class_scores))
-
-    # Compute the gradient without a loop
-    scores[np.arange(scores.shape[0]), y] -= 1
-    dW = X.T @ scores
-
-    # Average the loss and gradient
-    loss /= X.shape[0]
-    dW /= X.shape[0]
-
-    # Add regularization
-    loss += reg * np.sum(W * W)
-    dW += reg * 2 * W
+    pass
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 

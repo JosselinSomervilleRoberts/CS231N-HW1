@@ -66,12 +66,7 @@ class LinearClassifier(object):
             #########################################################################
             # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-            # 1. Randomly sample batch_size elements from the training data
-            elements = np.random.choice(num_train, batch_size)
-
-            # 2. Store the data in X_batch and their corresponding labels in y_batch
-            X_batch = X[elements]
-            y_batch = y[elements]
+            pass
 
             # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
@@ -86,8 +81,7 @@ class LinearClassifier(object):
             #########################################################################
             # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-            # 1. Update the weights using the gradient and the learning rate
-            self.W -= learning_rate * grad
+            pass
 
             # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
@@ -117,11 +111,7 @@ class LinearClassifier(object):
         ###########################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-        # 1. Compute the scores for each of the classes
-        scores = X.dot(self.W)
-
-        # 2. Get the highest score for each sample
-        y_pred = np.argmax(scores, axis=1)
+        pass
 
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         return y_pred
